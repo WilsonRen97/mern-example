@@ -1,6 +1,14 @@
 import axios from "axios";
-// const API_URL = "http://localhost:8080/api/courses";
-const API_URL = "http://localhost:" + process.env.PORT + "/api/user";
+
+const configs = {
+  development: {
+    SERVER_URI: "http://localhost:8080/",
+  },
+  production: {
+    SERVER_URI: "https://project9mern.herokuapp.com/",
+  },
+};
+const API_URL = configs[process.env.NODE_ENV] + "/api/courses";
 
 class CourseService {
   post(title, description, price) {
