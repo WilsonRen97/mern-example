@@ -1,5 +1,6 @@
 import axios from "axios";
-const API_URL = "http://localhost:8080/api/courses";
+// const API_URL = "http://localhost:8080/api/courses";
+const API_URL = "http://localhost:" + process.env.PORT + "/api/user";
 
 class CourseService {
   post(title, description, price) {
